@@ -1,4 +1,17 @@
-const Superhero = (props) => 
-    <h1>{props.hero.name}</h1>
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-export default Superhero; 
+const Superhero = (props) => {
+  const { name, alias } = props;
+  return (
+    <h1>
+      {name}
+      {' '}
+      is
+      {' '}
+      {alias}
+    </h1>
+  );
+};
+
+export default Superhero;

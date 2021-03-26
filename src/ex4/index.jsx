@@ -3,7 +3,7 @@ import './ex4.css';
 import Superhero from './Superhero';
 
 // eslint-disable-next-line import/prefer-default-export
-export const ExerciseFourView = () => {
+function ExerciseFourView() {
   // eslint-disable-next-line no-unused-vars
   const [superheroes, setSuperheroes] = useState([]);
 
@@ -14,7 +14,13 @@ export const ExerciseFourView = () => {
   });
 
   return (
-    <p>Do something with superheroes in there</p>
-    <Superhero 
+    superheroes.filter((hero) => hero.id <= 3).map((hero) => (
+      <Superhero
+        name={hero.name}
+        alias={hero.biography.aliases[0]}
+      />
+    ))
   );
-};
+}
+
+export default ExerciseFourView;
